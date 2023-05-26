@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import backgroundImage from "../images/background-home-mobile.jpg";
 
 export default function HomePage() {
-  document.body.style.backgroundImage = `url("./src/images/background-home-mobile.jpg")`;
+  document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   return (
     <>
