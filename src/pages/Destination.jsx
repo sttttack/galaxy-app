@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import backgroundImage from "../images/background-destination-mobile.jpg";
 
 export default function Destination({ info }) {
   const [array, setArray] = useState([info]);
@@ -8,9 +9,7 @@ export default function Destination({ info }) {
   const [titan, setTitan] = useState("Titan");
   const [destination, setDestination] = useState("Moon");
 
-  document.body.style.backgroundImage = `url(
-    "./src/images/background-destination-mobile.jpg"
-  )`;
+  document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   const destinations = array[0].destinations;
 

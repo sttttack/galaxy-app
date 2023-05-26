@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import backgroundImage from "../images/background-crew-mobile.jpg";
 
 export default function Crew({ info }) {
   const [array, setArray] = useState([info]);
@@ -8,9 +9,7 @@ export default function Crew({ info }) {
   const [victor, setVictor] = useState("Victor Glover");
   const [anounshen, setAnounshen] = useState("Anousheh Ansari");
 
-  document.body.style.backgroundImage = `url(
-    "./src/images/background-crew-mobile.jpg"
-  )`;
+  document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   const crewGroup = array[0].crew;
 

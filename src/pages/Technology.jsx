@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import backgroundImage from "../images/background-technology-mobile.jpg";
 
 export default function Technology({ info }) {
   const [array, setArray] = useState([info]);
@@ -7,9 +8,7 @@ export default function Technology({ info }) {
   const [space, setSpace] = useState("Spaceport");
   const [capsule, setCapsule] = useState("Space capsule");
 
-  document.body.style.backgroundImage = `url(
-    "./src/images/background-technology-mobile.jpg"
-  )`;
+  document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   const technologyGroup = array[0].technology;
 
