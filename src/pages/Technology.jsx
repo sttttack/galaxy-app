@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import backgroundImage from "/public/images/background-technology-mobile.jpg";
 import vehicleImg from "/public/images/image-launch-vehicle-landscape.jpg";
 
@@ -14,9 +14,11 @@ export default function Technology({ info }) {
 
   const technologyGroup = array[0].technology;
 
-  if (vehicle) {
-    setImgSrc(vehicleImg);
-  }
+  useEffect(() => {
+    if (vehicle) {
+      setImgSrc(vehicleImg);
+    }
+  }, []);
 
   const arrayMap = (technology) => {
     return technologyGroup
