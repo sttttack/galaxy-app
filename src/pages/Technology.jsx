@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import backgroundImage from "../images/background-technology-mobile.jpg";
+import backgroundImage from "/public/images/background-technology-mobile.jpg";
 
 export default function Technology({ info }) {
   const [array, setArray] = useState([info]);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../images/logo.svg";
-import Menu from "../images/icon-hamburger.svg";
-import Close from "../images/icon-close.svg";
+import Logo from "/public/images/logo.svg";
+import Menu from "/public/images/icon-hamburger.svg";
+import Close from "/public/images/icon-close.svg";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);

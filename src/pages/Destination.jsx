@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import backgroundImage from "../images/background-destination-mobile.jpg";
+import backgroundImage from "/public/images/background-destination-mobile.jpg";
 
 export default function Destination({ info }) {
   const [array, setArray] = useState([info]);
