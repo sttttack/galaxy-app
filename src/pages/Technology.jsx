@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import backgroundImage from "/public/images/background-technology-mobile.jpg";
+import vehicleImg from "/public/images/image-launch-vehicle-landscape.jpg";
 
 export default function Technology({ info }) {
   const [array, setArray] = useState([info]);
@@ -7,10 +8,15 @@ export default function Technology({ info }) {
   const [vehicle, setVehicle] = useState("Launch vehicle");
   const [space, setSpace] = useState("Spaceport");
   const [capsule, setCapsule] = useState("Space capsule");
+  const [imgSrc, setImgSrc] = useState();
 
   document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   const technologyGroup = array[0].technology;
+
+  if (vehicle) {
+    setImgSrc(vehicleImg);
+  }
 
   const arrayMap = (technology) => {
     return technologyGroup
@@ -21,11 +27,7 @@ export default function Technology({ info }) {
           className={`flex justify-center flex-col items-center mt-7`}
         >
           <div className={`flex flex-col justify-center items-center`}>
-            <img
-              src={item.images.landscape}
-              alt={item.name}
-              className={`h-56`}
-            />
+            <img src={imgSrc} alt={item.name} className={`h-56`} />
           </div>
           <div
             className={`flex flex-row gap-4 text-skyblue justify-center mt-8`}
