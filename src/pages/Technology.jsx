@@ -46,8 +46,8 @@ export default function Technology({ info }) {
               }}
               className={
                 technology === vehicle
-                  ? `w-10 h-10 bg-regwhite rounded-full  text-center pt-2 cursor-pointer border-solid border-4`
-                  : `w-10 h-10 bg-solidBlack rounded-full border-solid  text-center pt-2 cursor-pointer`
+                  ? `w-10 h-10  rounded-full  text-center text-black  pt-2 cursor-pointer border-solid border bg-regwhite`
+                  : `w-10 h-10  rounded-full border-solid  text-center text-solidBlack pt-2 cursor-pointer border`
               }
             >
               1
@@ -58,8 +58,8 @@ export default function Technology({ info }) {
               }}
               className={
                 technology === space
-                  ? `w-10 h-10 bg-regwhite rounded-full border-solid text-center pt-2 cursor-pointer`
-                  : `w-10 h-10 bg-solidBlack rounded-full border-solid text-center pt-2 cursor-pointer`
+                  ? `w-10 h-10  rounded-full  text-center text-black  pt-2 cursor-pointer border-solid border bg-regwhite`
+                  : `w-10 h-10  rounded-full border-solid  text-center text-solidBlack pt-2 cursor-pointer border`
               }
             >
               2
@@ -70,8 +70,8 @@ export default function Technology({ info }) {
               }}
               className={
                 technology === capsule
-                  ? `w-10 h-10 bg-regwhite rounded-full border-solid text-center pt-2 cursor-pointer`
-                  : `w-10 h-10 bg-solidBlack rounded-full border-solid text-center pt-2 cursor-pointer`
+                  ? `w-10 h-10  rounded-full  text-center text-black  pt-2 cursor-pointer border-solid border bg-regwhite`
+                  : `w-10 h-10  rounded-full border-solid  text-center text-solidBlack pt-2 cursor-pointer border `
               }
             >
               3
