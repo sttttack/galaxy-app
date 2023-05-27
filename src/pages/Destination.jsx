@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import backgroundImage from "/public/images/background-destination-mobile.jpg";
+import MoonImg from "/public/images/image-moon.png";
+import MarsImg from "/public/images/image-mars.png";
+import EuropaImg from "/public/images/image-europa.png";
+import TitanImg from "/public/images/image-titan.png";
 
 export default function Destination({ info }) {
   const [array, setArray] = useState([info]);
@@ -8,10 +12,23 @@ export default function Destination({ info }) {
   const [europa, setEuropa] = useState("Europa");
   const [titan, setTitan] = useState("Titan");
   const [destination, setDestination] = useState("Moon");
+  const [imgSrc, setImgSrc] = useState();
 
   document.body.style.backgroundImage = `url(${backgroundImage})`;
 
   const destinations = array[0].destinations;
+
+  useEffect(() => {
+    if (destination === "Moon") {
+      setImgSrc(MoonImg);
+    } else if (destination === "Mars") {
+      setImgSrc(MarsImg);
+    } else if (destination === "Europa") {
+      setImgSrc(EuropaImg);
+    } else if (destination === "Titan") {
+      setImgSrc(TitanImg);
+    }
+  }, [destination]);
 
   const arrayMap = (destination) => {
     return destinations
@@ -21,7 +38,7 @@ export default function Destination({ info }) {
           key={item.name}
           className={`flex justify-center flex-col items-center mt-7`}
         >
-          <img src={item.images.png} alt={item.name} className={`w-44 h-44`} />
+          <img src={imgSrc} alt={item.name} className={`w-44 h-44`} />
           <div
             className={`flex flex-row gap-6 text-skyblue justify-center mt-6`}
           >

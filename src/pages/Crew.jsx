@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import backgroundImage from "/public/images/background-crew-mobile.jpg";
+import DouglasImg from "/public/images/image-douglas-hurley.png";
+import MarkImg from "/public/images/image-mark-shuttleworth.png";
+import VictorImg from "/public/images/image-victor-glover.png";
+import AnnImg from "/public/images/image-anousheh-ansari.png";
 
 export default function Crew({ info }) {
   const [array, setArray] = useState([info]);
@@ -8,8 +12,21 @@ export default function Crew({ info }) {
   const [mark, setMark] = useState("Mark Shuttleworth");
   const [victor, setVictor] = useState("Victor Glover");
   const [anounshen, setAnounshen] = useState("Anousheh Ansari");
+  const [imgSrc, setImgSrc] = useState();
 
   document.body.style.backgroundImage = `url(${backgroundImage})`;
+
+  useEffect(() => {
+    if (crew === "Douglas Hurley") {
+      setImgSrc(DouglasImg);
+    } else if (crew === "Mark Shuttleworth") {
+      setImgSrc(MarkImg);
+    } else if (crew === "Victor Glover") {
+      setImgSrc(VictorImg);
+    } else if (crew === "Anousheh Ansari") {
+      setImgSrc(AnnImg);
+    }
+  }, [crew]);
 
   const crewGroup = array[0].crew;
 
@@ -24,7 +41,7 @@ export default function Crew({ info }) {
           <div
             className={`flex flex-col justify-center items-center border-b border-solidBlack min-w-[327px]`}
           >
-            <img src={item.images.png} alt={item.name} className={`h-56`} />
+            <img src={imgSrc} alt={item.name} className={`h-56`} />
           </div>
           <div
             className={`flex flex-row gap-4 text-skyblue justify-center mt-8`}

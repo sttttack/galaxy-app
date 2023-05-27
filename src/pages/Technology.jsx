@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import backgroundImage from "/public/images/background-technology-mobile.jpg";
 import vehicleImg from "/public/images/image-launch-vehicle-landscape.jpg";
+import spaceSportImg from "/public/images/image-spaceport-landscape.jpg";
+import capsuleImg from "/public/images/image-space-capsule-landscape.jpg";
 
 export default function Technology({ info }) {
   const [array, setArray] = useState([info]);
@@ -15,10 +17,14 @@ export default function Technology({ info }) {
   const technologyGroup = array[0].technology;
 
   useEffect(() => {
-    if (vehicle) {
+    if (technology === "Launch vehicle") {
       setImgSrc(vehicleImg);
+    } else if (technology === "Spaceport") {
+      setImgSrc(spaceSportImg);
+    } else if (technology === "Space capsule") {
+      setImgSrc(capsuleImg);
     }
-  }, []);
+  }, [technology]);
 
   const arrayMap = (technology) => {
     return technologyGroup
@@ -40,30 +46,36 @@ export default function Technology({ info }) {
               }}
               className={
                 technology === vehicle
-                  ? `w-3 h-3 bg-regwhite rounded-md`
-                  : `w-3 h-3 bg-solidBlack rounded-md`
+                  ? `w-10 h-10 bg-regwhite rounded-full  text-center pt-2 cursor-pointer border-solid border-4`
+                  : `w-10 h-10 bg-solidBlack rounded-full border-solid  text-center pt-2 cursor-pointer`
               }
-            ></div>
+            >
+              1
+            </div>
             <div
               onClick={() => {
                 settechnology(space);
               }}
               className={
                 technology === space
-                  ? `w-3 h-3 bg-regwhite rounded-md`
-                  : `w-3 h-3 bg-solidBlack rounded-md`
+                  ? `w-10 h-10 bg-regwhite rounded-full border-solid text-center pt-2 cursor-pointer`
+                  : `w-10 h-10 bg-solidBlack rounded-full border-solid text-center pt-2 cursor-pointer`
               }
-            ></div>
+            >
+              2
+            </div>
             <div
               onClick={() => {
                 settechnology(capsule);
               }}
               className={
                 technology === capsule
-                  ? `w-3 h-3 bg-regwhite rounded-md`
-                  : `w-3 h-3 bg-solidBlack rounded-md`
+                  ? `w-10 h-10 bg-regwhite rounded-full border-solid text-center pt-2 cursor-pointer`
+                  : `w-10 h-10 bg-solidBlack rounded-full border-solid text-center pt-2 cursor-pointer`
               }
-            ></div>
+            >
+              3
+            </div>
           </div>
           <p
             className={`text-md mt-8 mb-2 font-bellefair uppercase text-regwhite opacity-50`}
