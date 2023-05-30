@@ -69,8 +69,8 @@ export default function Destination({ info }) {
             <div
               className={`lg:flex font-condensed text-regwhite text-base tracking-widest uppercase lg:text-[28px] hidden lg:relative lg:top-[-90px] gap-4`}
             >
-              <span className={`opacity-25`}>03 </span>
-              <span>Space lunch 101</span>
+              <span className={`opacity-25`}>01 </span>
+              <span>Pick your destination</span>
             </div>
             <img
               src={imgSrc}
