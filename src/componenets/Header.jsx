@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "/public/images/logo.svg";
 import Menu from "/public/images/icon-hamburger.svg";
 import Close from "/public/images/icon-close.svg";
+import MenuBar from "./MenuBar";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -18,22 +19,31 @@ export default function Header() {
 
   return (
     <>
-      <header className={`flex items-center w-auto m-6 justify-between`}>
+      <header
+        className={`flex items-center w-auto m-6 justify-between md:m-0 md:pl-10 lg:mt-10 lg:ml-14`}
+      >
         <div>
-          <img src={Logo} alt="logo" className={`cursor-pointer`}></img>
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="logo homepage"
+              className={`cursor-pointer`}
+            ></img>
+          </Link>
         </div>
         <div>
           <img
             src={menu ? Close : Menu}
             alt="menu icon close icon"
-            className={`cursor-pointer relative z-10`}
+            className={`cursor-pointer relative z-10 md:hidden`}
             onClick={clickHandler}
           ></img>
         </div>
+        <MenuBar />
         <div
           className={
             menu
-              ? `w-64 h-screen fixed backdrop-blur-md bg-customRgba top-0 end-px`
+              ? `w-64 h-screen fixed backdrop-blur-md bg-customRgba top-0 end-px md:backdrop-blur-0`
               : `hidden`
           }
         >

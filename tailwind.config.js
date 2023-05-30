@@ -15,6 +15,13 @@ export default {
         condensed: ["Barlow Condensed", "sans-serif"],
         bellefair: ["Bellefair", "sans-serif"],
       },
+      width: {
+        450: "450px",
+        830: "830px",
+      },
+      spacing: {
+        sm: "2.36px",
+      },
     },
   },
   plugins: [],
